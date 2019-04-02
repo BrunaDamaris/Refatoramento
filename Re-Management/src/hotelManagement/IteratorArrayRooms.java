@@ -3,15 +3,15 @@ package hotelManagement;
 import java.util.ArrayList;
 
 public class IteratorArrayRooms implements RoomsIterator{
-	ArrayList<Room> rooms;
+	ArrayList<Rooms> rooms;
     int currentposition;
     
-    public IteratorArrayRooms(ArrayList<Room> rooms) {
+    public IteratorArrayRooms(ArrayList<Rooms> rooms) {
         this.rooms = rooms;
     }
     @Override
     public Object next() {
-        Room room = rooms.get(currentposition);
+        Rooms room = rooms.get(currentposition);
         currentposition++;
         return room;
     }

@@ -6,13 +6,13 @@ public enum RoomsType implements RoomsStrategy{
 	DOUBLELUXURY{
 
 		@Override
-		public double calculate(ArrayList<Room> rooms,int rn) {
+		public double calculate(ArrayList<Rooms> rooms,int rn) {
 			double amount=0;
 	        String list[]={"Sandwich","Pasta","Noodles","Coke"};
 	        System.out.println("\n*******");
 	        System.out.println(" Bill:-");
 	        System.out.println("*******");
-			Room now = Room.getRoom(rooms, rn);
+			Rooms now = Rooms.getRoom(rooms, rn);
 			amount+=4000;
             System.out.println("\nRoom Charge - "+4000);
             System.out.println("\n===============");
@@ -38,13 +38,13 @@ public enum RoomsType implements RoomsStrategy{
 	DOUBLEDELUXE{
 
 		@Override
-		public double calculate(ArrayList<Room> rooms, int rn) {
+		public double calculate(ArrayList<Rooms> rooms, int rn) {
 			double amount=0;
 	        String list[]={"Sandwich","Pasta","Noodles","Coke"};
 	        System.out.println("\n*******");
 	        System.out.println(" Bill:-");
 	        System.out.println("*******");
-			Room now = Room.getRoom(rooms, rn);
+			Rooms now = Rooms.getRoom(rooms, rn);
 			amount+=3000;
             System.out.println("Room Charge - "+3000);
             System.out.println("\nFood Charges:- ");
@@ -68,13 +68,13 @@ public enum RoomsType implements RoomsStrategy{
 	SINGLELUXURY{
 
 		@Override
-		public double calculate(ArrayList<Room> rooms, int rn) {
+		public double calculate(ArrayList<Rooms> rooms, int rn) {
 			double amount=0;
 	        String list[]={"Sandwich","Pasta","Noodles","Coke"};
 	        System.out.println("\n*******");
 	        System.out.println(" Bill:-");
 	        System.out.println("*******");
-			Room now = Room.getRoom(rooms, rn);
+			Rooms now = Rooms.getRoom(rooms, rn);
 			amount+=2200;
             System.out.println("Room Charge - "+2200);
             System.out.println("\nFood Charges:- ");
@@ -100,13 +100,13 @@ public enum RoomsType implements RoomsStrategy{
 	SINGLEDELUXE{
 
 		@Override
-		public double calculate(ArrayList<Room> rooms, int rn) {
+		public double calculate(ArrayList<Rooms> rooms, int rn) {
 			double amount=0;
 	        String list[]={"Sandwich","Pasta","Noodles","Coke"};
 	        System.out.println("\n*******");
 	        System.out.println(" Bill:-");
 	        System.out.println("*******");
-			Room now = Room.getRoom(rooms, rn);
+			Rooms now = Rooms.getRoom(rooms, rn);
 			amount+=1200;
             System.out.println("Room Charge - "+1200);
             System.out.println("\nFood Charges:- ");

@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 
 public class Project3 {
-	static ArrayList<Room> rooms = new ArrayList<>();
+	static ArrayList<Rooms> rooms = new ArrayList<>();
 	public static void main(String[] args){
 		
         try
@@ -18,7 +18,7 @@ public class Project3 {
         {
             FileInputStream fin=new FileInputStream(f);
             ObjectInputStream ois=new ObjectInputStream(fin);
-           	rooms = (ArrayList<Room>)ois.readObject();
+           	rooms = (ArrayList<Rooms>)ois.readObject();
         }
         Scanner sc = new Scanner(System.in);
         String wish = null;

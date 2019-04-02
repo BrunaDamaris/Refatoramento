@@ -6,9 +6,9 @@ import java.util.ArrayList;
 
 class write implements Runnable
 {
-	ArrayList<Room> rooms;
+	ArrayList<Rooms> rooms;
 	private ObjectOutputStream oos;
-    write(ArrayList<Room> rooms)
+    write(ArrayList<Rooms> rooms)
     {
         this.rooms = rooms;
     }

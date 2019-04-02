@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class DeallocateCommand implements MainCommand{
 	static Scanner sc1 = new Scanner(System.in);
 	@Override
-	public void execute(ArrayList<Room> room,Hotel hotel) {
+	public void execute(ArrayList<Rooms> room,Hotel hotel) {
 		int rn = 0;
     	System.out.print("Room Number -");
     	String trash = "";
@@ -18,10 +18,10 @@ public class DeallocateCommand implements MainCommand{
 				correctInput = true;
 			}
 			catch(NumberFormatException e){
-				System.out.println("Valor no formato incorreto."  + trash);
+				System.out.println("Incorrect Format."  + trash);
 			}
 			catch(InputMismatchException e) {
-				System.out.println("Valor no formato incorreto."  + trash);
+				System.out.println("Incorrect Format."  + trash);
 			}
 			trash = sc1.nextLine();
 		}

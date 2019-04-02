@@ -15,7 +15,7 @@ class Hotel
 	}
 	
     static Scanner sc = new Scanner(System.in);
-    static void CustDetails(int i,int rn,ArrayList<Room> rooms,Hotel hotel)
+    static void CustDetails(int i,int rn,ArrayList<Rooms> rooms,Hotel hotel)
     {
         String name, contact, gender;
         String name2 = null, contact2 = null; 
@@ -35,7 +35,7 @@ class Hotel
 	        System.out.print("Enter gender: ");
 	        gender2 = sc.next();
         }
-        Room newroom = null;
+        Rooms newroom = null;
         if(i == 1 || i == 2 || i == 3 || i== 4) {
         	newroom = RoomsInvoker.invoker_1(i, newroom, hotel,name,contact,gender,name2,contact2,gender2,rn);
     		rooms.add(newroom);
@@ -43,7 +43,7 @@ class Hotel
         else System.out.println("Wrong Option!");
 	}
     
-    static void bookroom(ArrayList<Room> rooms,Hotel hotel)
+    static void bookroom(ArrayList<Rooms> rooms,Hotel hotel)
     {
     	int i = 0;
     	System.out.println("\nChoose room type :\n1.Luxury Double Room \n2.Deluxe Double Room \n3.Luxury Single Room\n4.Deluxe Single Room\n");
@@ -55,16 +55,16 @@ class Hotel
 				correctInput = true;
 			}
 			catch(NumberFormatException e){
-				System.out.println("Valor no formato incorreto." + trash);
+				System.out.println("Incorrect Format." + trash);
 			}
 			catch(InputMismatchException e) {
-				System.out.println("Valor no formato incorreto." + trash);
+				System.out.println("Incorrect Format." + trash);
 			}
 			trash = sc.nextLine();
 		}
 		correctInput = false;
         int rn = 0;
-        Room now = null;
+        Rooms now = null;
         System.out.println("\nChoose room number from : ");
         if(i == 1 || i == 2 || i == 3 || i == 4) RoomsInvoker.invoker(i, rooms);
         else {
@@ -79,15 +79,15 @@ class Hotel
 					correctInput = true;
 				}
 				catch(NumberFormatException e){
-					System.out.println("Valor no formato incorreto.");
+					System.out.println("Incorrect Format.");
 				}
 				catch(InputMismatchException e) {
-					System.out.println("Valor no formato incorreto.");
+					System.out.println("Incorrect Format.");
 				}
 				trash = sc.nextLine();
 			}
 			correctInput = false;
-	        now = Room.getRoom(rooms, rn);
+	        now = Rooms.getRoom(rooms, rn);
 	        if(now != null || rn == 0) throw new NotAvailable();
 	        CustDetails(i,rn,rooms,hotel);
 	    }
@@ -111,10 +111,10 @@ class Hotel
 				correctInput = true;
 			}
 			catch(NumberFormatException e){
-				System.out.println("Valor no formato incorreto.");
+				System.out.println("Incorrect Format.");
 			}
 			catch(InputMismatchException e) {
-				System.out.println("Valor no formato incorreto.");
+				System.out.println("Incorrect Format.");
 			}
 			trash = sc.nextLine();
 		}
@@ -126,16 +126,16 @@ class Hotel
 		else System.out.println("Enter valid option" + trash);
     }
     
-    static void bill(int rn,ArrayList<Room> rooms,RoomsType current)
+    static void bill(int rn,ArrayList<Rooms> rooms,RoomsType current)
     {
     	double amount = current.calculate(rooms, rn);
         System.out.println("\nTotal Amount- " + amount);
     }
     
-    static void deallocate(int rn,ArrayList<Room> rooms,Hotel hotel)
+    static void deallocate(int rn,ArrayList<Rooms> rooms,Hotel hotel)
     {
         char w;
-        Room now = Room.getRoom(rooms, rn);
+        Rooms now = Rooms.getRoom(rooms, rn);
         if(now != null) {
         	System.out.println("Room used by "+ now.name);
         	System.out.println(" Do you want to checkout ? (y/n)");

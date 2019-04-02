@@ -13,8 +13,8 @@ import hotelManagement.OrderCommand;
 
 public class MainInvoker {
 	public static Map<String, MainCommand> commands = new HashMap<String,MainCommand>();
-	static ArrayList<Room> rooms;
-	public void setRoom(ArrayList<Room> rooms) {
+	static ArrayList<Rooms> rooms;
+	public void setRoom(ArrayList<Rooms> rooms) {
 		MainInvoker.rooms = rooms;
 	}
 	static {
@@ -24,7 +24,7 @@ public class MainInvoker {
         commands.put("4",new OrderCommand());
         commands.put("5",new DeallocateCommand());
 	}
-	public static void invoker(String command,ArrayList<Room> room,Hotel hotel) {
+	public static void invoker(String command,ArrayList<Rooms> room,Hotel hotel) {
 		commands.get(command).execute(room,hotel);
 	}
 }

@@ -6,8 +6,8 @@ import java.util.Map;
 
 public class FoodInvoker {
 	public static Map<Integer, FoodCommand> foodcommands = new HashMap<Integer,FoodCommand>();
-	static ArrayList<Room> rooms;
-	public void setRoom(ArrayList<Room> rooms) {
+	static ArrayList<Rooms> rooms;
+	public void setRoom(ArrayList<Rooms> rooms) {
 		MainInvoker.rooms = rooms;
 	}
 	static {

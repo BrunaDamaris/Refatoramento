@@ -22,7 +22,7 @@ class Food implements Serializable
         this.price = FoodInvoker.invoker(itemno, quantity);
     }
     
-    static void order(Scanner sc1,ArrayList<Room> rooms,int rn)
+    static void order(Scanner sc1,ArrayList<Rooms> rooms,int rn)
     {
         int i = 0,q = 0;
         char wish;
@@ -38,10 +38,10 @@ class Food implements Serializable
     				correctInput = true;
     			}
     			catch(NumberFormatException e){
-    				System.out.println("Valor no formato incorreto.");
+    				System.out.println("Incorrect Format.");
     			}
     			catch(InputMismatchException e) {
-    				System.out.println("Valor no formato incorreto.");
+    				System.out.println("Incorrect Format.");
     			}
     			trash = sc1.nextLine();
     		}
@@ -53,14 +53,14 @@ class Food implements Serializable
     				correctInput = true;
     			}
     			catch(NumberFormatException e){
-    				System.out.println("Valor no formato incorreto." + trash);
+    				System.out.println("Incorrect Format." + trash);
     			}
     			catch(InputMismatchException e) {
-    				System.out.println("Valor no formato incorreto." + trash);
+    				System.out.println("Incorrect Format." + trash);
     			}
     			trash = sc1.nextLine();
     		}
-            Room now = Room.getRoom(rooms, rn);
+            Rooms now = Rooms.getRoom(rooms, rn);
             if(now != null) now.food.add(new Food(i,q));
             System.out.println("Do you want to order anything else ? (y/n)");
             wish=sc1.next().charAt(0); 
