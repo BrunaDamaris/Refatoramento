@@ -12,20 +12,20 @@
 	- Solução: Utilizado em diversos métodos para melhor iteração em lista, suportando vários percursos e mantendo controle.
 - Classes e Métodos Afetados:
     - Command: 
-      Project3:
-      - Foram retirados switch cases na main para o menu de escolhas.
-       Food:
-      - Retirados switch cases do construtor e do método order.
-       Hotel:
-      - Retirados switch cases de alguns métodos que tinham menus de escolhas, ou seja, métodos CustDetails, bookroom e availability.
+      - Project3:
+      	- Foram retirados switch cases na main para o menu de escolhas.
+      -	Food:
+      	- Retirados switch cases do construtor e do método order.
+      - Hotel:
+      	- Retirados switch cases de alguns métodos que tinham menus de escolhas, ou seja, métodos CustDetails, bookroom e availability.
       - Classes adicionadas: MainCommand, MainInvoker, AvailableCommand, BookroomCommand, DeallocateCommand, FeaturesCommand, OrderCommand, FoodCommand, FoodInvoker, CokeCommand, PastaCommand, SandwichCommand, NoodlesCommand, RoomsCommand, RoomsInvoker, DoubleLCommand, DoubleDCommand,SingleLCommand, SingleDCommand.
     - Strategy:
-      Hotel:
-      - Utilizado nos métodos que já se tinha o tipo a ser tratado, ao seja, no método deallocate para tratar de diferentes comportamentos de acordo com o tipo do quarto desejado e bills para tratar como seria calculada para cada tipo de quarto.
+      - Hotel: 
+      	- Utilizado nos métodos que já se tinha o tipo a ser tratado, ao seja, no método deallocate para tratar de diferentes comportamentos de acordo com o tipo do quarto desejado e bills para tratar como seria calculada para cada tipo de quarto.
       - Classes adicionadas: RoomsStrategy, RoomsType.
     - Iterator:
-      Rooms:
-      - Método getRoom utiliza Iterator.
+      - Rooms:
+     	 - Método getRoom utiliza Iterator.
       - Classes adicionadas: RoomsIterator, IteratorArrayRooms.
     - Observações: Foi substituida a Data Class holder por um ArrayList numa classe principal. Foram substituidas as Lazy Class Singleroom e Doubleroom por somente uma classe Rooms, já que as mesmas eram semelhantes e não cumpriam seus devidos papeis ao máximo. Alguns métodos foram mudados de classes já que suas implementações tinham mais ligação com outra classe.
 - Funcionalidades Afetadas:
